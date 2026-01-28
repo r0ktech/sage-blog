@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Modern Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Ionicons for icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div class="container nav-content">
+            <div class="logo">M-Blog</div>
+            <div>
+                <span id="welcomeUser"
+                    style="margin-right: 15px; color: var(--text-secondary); font-size: 0.9rem;"></span>
+                <button onclick="logout()" class="btn btn-secondary"
+                    style="padding: 8px 16px; font-size: 0.8rem;">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container feed-layout">
+        <main class="main-feed">
+            <!-- Create Post -->
+            <div class="create-post-card glass-panel">
+                <div style="margin-bottom: 10px; font-weight: 600;">Create a new post</div>
+                <textarea id="postContent" rows="3" placeholder="What's on your mind?"></textarea>
+                <div class="create-post-actions">
+                    <button class="btn btn-primary" onclick="createPost()">Post</button>
+                </div>
+            </div>
+
+            <!-- Feed -->
+            <div id="postsFeed">
+                <!-- Posts will be injected here -->
+                <div style="text-align: center; padding: 40px; color: var(--text-secondary);">Loading feeds...</div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+        // Init Dashboard
+        checkAuth();
+        loadPosts();
+    </script>
+</body>
+
+</html>
